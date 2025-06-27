@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Portfolio - Amal Pecoraro</title>
+  <link rel="icon" type="image/x-icon" href="assets/favicon.ico">
+  <link rel="icon" type="image/png" sizes="32x32" href="assets/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="assets/favicon-16x16.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="assets/apple-touch-icon.png">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <div class="scroll-indicator"></div>
+  
+  <header>
+    <nav class="nav-container">
+      <ul>
+        <li><a href="#chi-sono" class="active">Chi sono</a></li>
+        <li><a href="#portfolio">Portfolio</a></li>
+        <li><a href="#curriculum">Curriculum</a></li>
+        <li><a href="#contatti">Contatti</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <!-- Sezione Chi sono -->
+    <section id="chi-sono" class="hero">
+      <div class="container">
+        <div class="hero-content fade-in">
+          <img src="assets/foto.jpg" alt="Foto di Amal Pecoraro" class="profile-pic" />
+          <h1>Ciao! Sono Amal Pecoraro</h1>
+          <p class="subtitle">Sviluppatore Full-Stack & Project Manager</p>
+          <p class="description">
+            Neodiplomato in Informatica e Telecomunicazioni presso l’I.I.S.S. “Alessandro Greppi” (2020–2025), 
+            sono uno sviluppatore web full-stack con una solida formazione in Informatica e Tecnologie e Progettazione di Sistemi Informatici (TPS). Ho acquisito competenze avanzate nello sviluppo di applicazioni web complesse utilizzando <strong>ASP.NET Core</strong>, <strong>Node.js</strong>, <strong>MongoDB</strong>, <strong>SQL</strong> e <strong>Docker</strong>. Parallelamente, ho sviluppato competenze di <strong>project management</strong> (Agile, Scrum, WBS, Gantt) e capacità analitiche (SWOT, Business Model), integrando un approccio orientato al problem-solving. Appassionato di tecnologia e innovazione, sono pronto a portare valore, creatività e professionalità in contesti dinamici.
+          </p>
+          <div class="buttons">
+            <a href="assets/cv.pdf" download class="btn btn-primary">Scarica CV</a>
+            <a href="https://github.com/PecoraroAmal" target="_blank" class="btn btn-secondary">GitHub</a>
+            <a href="https://linkedin.com/in/amal-pecoraro-a530a02b6/" target="_blank" class="btn btn-secondary">LinkedIn</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Sezione Portfolio -->
+    <section id="portfolio" class="content-section">
+      <div class="container">
+        <h2 class="section-title">Portfolio Progetti</h2>
+        <div class="projects-grid">
+          <div class="project-card glass-card">
+            <h3>Gestione Richieste Clienti da CSV</h3>
+            <p>
+              Sviluppato durante uno stage estivo (10–21 giugno 2024) presso [Nome Azienda, se disponibile], un'applicazione web in <strong>Python</strong> e <strong>Flask</strong> per automatizzare la gestione delle richieste clienti ricevute tramite sito web. Il programma analizza tre file CSV giornalieri e un file TXT con clienti noti, identificati tramite numero di telefono, classificandoli in tre categorie: "Da contattare", "Già noti" e "Numero di telefono errato". I risultati sono esportati in un file XLSX con tre colonne distinte. Progetto completato in due giorni, dimostrando efficienza e autonomia.
+            </p>
+          </div>
+
+          <div class="project-card glass-card">
+            <h3>Web App per Ordinazioni di Bevande</h3>
+            <p>
+              Applicazione web completa per la gestione di ordinazioni aziendali, con ruoli di amministratore e utente. Sviluppata con <strong>Node.js</strong>, <strong>Express</strong> e un database relazionale (<strong>MySQL</strong>), include un sistema di autenticazione sicura, validazione dati lato server e client, e aggiornamento in tempo reale della disponibilità delle bevande. Generazione automatica di report settimanali in formato CSV, con il dettaglio delle ordinazioni per dipendente. Progetto focalizzato su scalabilità e usabilità.
+            </p>
+          </div>
+
+          <div class="project-card glass-card">
+            <h3>Sito di Ricette con ASP.NET Minimal API</h3>
+            <p>
+              Sito web di cucina con back-end basato su <strong>ASP.NET Minimal API</strong> e front-end responsive realizzato con <strong>HTML5</strong>, <strong>CSS3</strong>, <strong>JavaScript</strong> e <strong>Bootstrap</strong>. Integra un database <strong>MariaDB</strong> per la gestione di ricette e recensioni, e l’API esterna <strong>TheMealDB</strong> per la ricerca di ricette per regione. Funzionalità principali: visualizzazione, creazione, modifica ed eliminazione di ricette e valutazioni, con endpoints RESTful (GET, POST, PUT, DELETE) e interfaccia dinamica con hamburger menu e cards. Progetto incentrato su integrazione API e design responsivo.
+            </p>
+          </div>
+
+          <div class="project-card glass-card">
+            <h3>Calcolatore di Investimento Online</h3>
+            <p>
+              Applicazione web per simulare strategie di investimento (Standard e Premium), calcolando rendimenti con interessi composti, tassazione al 26% e costi aggiuntivi. Sviluppata con <strong>HTML5</strong>, <strong>CSS3</strong>, <strong>JavaScript</strong> e <strong>Bootstrap</strong>, offre input personalizzati (saldo iniziale, risparmi mensili, tasso annuo), tabelle interattive modificabili, e esportazione dei risultati in file TXT. Ottimizzata per periodi lunghi (>20 anni) con calcolo delle 10 migliori combinazioni di investimento. Disponibile online: <a href="https://pecoraroamal.github.io/calcolatore-investimento/" target="_blank" class="project-link">Vedi progetto →</a>
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Sezione Curriculum -->
+    <section id="curriculum" class="content-section">
+      <div class="container">
+        <h2 class="section-title">Curriculum Vitae</h2>
+
+        <div class="cv-section glass-card">
+          <h3>Formazione</h3>
+          <div class="cv-item">
+            <p>
+              <strong>Diploma in Informatica e Telecomunicazioni</strong><br>
+              I.I.S.S. “Alessandro Greppi”, Monticello Brianza (LC)<br>
+              2020–2025<br>
+              Percorso formativo incentrato sullo sviluppo web full-stack, sulla gestione di sistemi informativi e database relazionali e non relazionali, sull’impiego di tecnologie di containerizzazione con Docker e sull’applicazione di metodologie di project management Agile e Scrum. Esperienza maturata attraverso progetti PCTO in contesti aziendali, con focus su problem-solving, analisi dei requisiti e progettazione di sistemi informativi complessi.
+              </p>
+          </div>
+        </div>
+
+        <div class="cv-section glass-card">
+          <h3>Competenze Tecniche</h3>
+          <ul class="skills-list">
+            <li><strong>Linguaggi di Programmazione:</strong> HTML, CSS, JavaScript, C#, Python, SQL, MQL</li>
+            <li><strong>Framework e Tecnologie Web:</strong> ASP.NET Core, Node.js, Express, Flask, Bootstrap, LINQ</li>
+            <li><strong>Database:</strong> MySQL, MariaDB, SQL Server, MongoDB, Entity Framework Core</li>
+            <li><strong>DevOps e Strumenti:</strong> Docker, Docker Compose, Git, GitHub</li>
+            <li><strong>API e Sicurezza:</strong> RESTful APIs, OAuth 2.0, mitigazione XSS/CSRF, SQL Injection, AntiForgeryToken</li>
+            <li><strong>Progettazione e Modellazione:</strong> UML (Use Case, Class, Sequence), Schemi E/R, normalizzazione (1NF, 2NF, 3NF, Boyce-Codd), progettazione fisica</li>
+          </ul>
+        </div>
+
+        <div class="cv-section glass-card">
+          <h3>Competenze di Project Management</h3>
+          <ul class="skills-list">
+            <li><strong>Metodologie:</strong> Agile, Scrum, WBS, diagrammi di Gantt</li>
+            <li><strong>Gestione Progetti:</strong> Pianificazione, gestione di team, budget, scadenze e rischi</li>
+            <li><strong>Analisi Aziendale:</strong> Business Model Canvas, Value Proposition, Business Plan</li>
+            <li><strong>Soft Skills:</strong> Comunicazione efficace, leadership, collaborazione in team, problem-solving</li>
+          </ul>
+        </div>
+
+        <div class="cv-section glass-card">
+          <h3>Esperienze Professionali</h3>
+          <div class="cv-item">
+            <p>
+              <strong>Stage Scolastico – Sviluppo Applicazione e Web App</strong><br>
+              Sviluppo di due progetti principali:<br>
+              <em>Gestione Richieste Clienti da CSV</em> – Creazione autonoma di un programma (<strong>Python</strong> e <strong>Flask</strong>) per la gestione delle richieste ricevute quotidianamente tramite il sito aziendale. Il programma elaborava tre file CSV generati a fine giornata e un file TXT contenente i numeri di telefono dei clienti già noti. Il sistema suddivideva automaticamente le richieste in tre categorie: “Da contattare”, “Già noti” e “Numero di telefono errato”. I risultati venivano esportati in un file XLSX con tre colonne dedicate. Progetto completato in due giorni.
+              <br><br>
+              <em>Web App per Ordinazioni di Bevande</em> – Realizzazione di una web app completa per la gestione delle ordinazioni di bevande aziendali, con ruoli di amministratore e utente. Ogni bevanda era associata a una disponibilità aggiornata in tempo reale grazie a un database relazionale. A fine settimana, la web app generava un report che indicava, per ciascun dipendente, il numero di bevande ordinate durante la settimana.
+            </p>
+          </div>
+          <div class="cv-item">
+            <p>
+              <strong>Project Manager – Progetto Scolastico Simulazione Aziendale</strong><br>
+              I.I.S.S. “Alessandro Greppi”, Monticello Brianza (LC) (gennaio–maggio 2025)<br>
+              Coordinatore di un progetto scolastico simulato, gestendo tre team incaricati di sviluppare soluzioni per scenari aziendali: ristrutturazione di una casa, creazione di un’autoconcessionaria e progettazione di un albergo. Applicazione di metodologie <strong>Agile</strong> e <strong>Scrum</strong>, con utilizzo di strumenti come <strong>WBS</strong> e diagrammi di <strong>Gantt</strong> per pianificare e monitorare le attività.
+            </p>
+          </div>
+        </div>
+
+
+        <div class="cv-section glass-card">
+          <h3>Competenze Linguistiche</h3>
+          <ul class="skills-list">
+            <li><strong>Italiano:</strong> Madrelingua</li>
+            <li><strong>Inglese:</strong> B2</li>
+          </ul>
+        </div>
+        <div style="margin-top: 2rem; display: flex; justify-content: center;">
+          <a href="assets/cv.pdf" class="btn btn-primary" download>Scarica CV PDF</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Sezione Contatti -->
+    <section id="contatti" class="content-section">
+      <div class="container">
+        <h2 class="section-title">Contatti</h2>
+        <p style="text-align: center; color: var(--text-secondary); margin-bottom: 2rem;">
+        </p>
+        <ul class="contact-links">
+          <li>
+            <span id="email" class="copyable-email">amal.pecoraro2006@gmail.com</span>
+          </li>
+          <button onclick="copyEmail()" class="copy-btn" title="Copia email">
+            <i class="fas fa-copy"></i>
+          </button>
+          <li>
+            <a href="https://github.com/PecoraroAmal" target="_blank">
+              <i class="fab fa-github"></i> GitHub
+            </a>
+          </li>
+          <li>
+            <a href="https://linkedin.com/in/amal-pecoraro-a530a02b6/" target="_blank">
+              <i class="fab fa-linkedin"></i> LinkedIn
+            </a>
+          </li>
+        </ul>
+      </div>
+    </section>
+  </main>
+
+  <footer class="glass">
+    <div class="container">
+      <p>© 2025 Amal Pecoraro – Tutti i diritti riservati</p>
+    </div>
+  </footer>
+  <script src="js/script.js"></script>
+</body>
+</html>
