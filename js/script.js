@@ -242,8 +242,8 @@ function activateEasterEgg() {
 // CONSOLE MESSAGE
 // ==========================================
 
-console.log('%c👋 Ciao!', 'font-size: 24px; font-weight: bold;');
-console.log('%cSe stai guardando la console, significa che sei curioso! 🚀', 'font-size: 14px;');
+console.log('%cCiao!', 'font-size: 24px; font-weight: bold;');
+console.log('%cSe stai guardando la console, significa che sei curioso! ', 'font-size: 14px;');
 console.log('%cSe vuoi saperne di più sui miei progetti, contattami!', 'font-size: 14px; color: #666;');
 
 // ==========================================
