@@ -1,0 +1,426 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="I miei progetti e realizzazioni">
+    <title>Portfolio | Progetti</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <div class="grain"></div>
+    
+    <nav class="nav-glass">
+        <div class="nav-container">
+            <a href="index.html" class="nav-logo">Personal Website</a>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="portfolio.html" class="active">Portfolio</a></li>
+                <li><a href="curriculum.html">Curriculum</a></li>
+                <li><a href="contatti.html">Contatti</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <main class="page-main">
+        <div class="page-container">
+            <h1 class="page-title">Portfolio Progetti</h1>
+            <p class="page-subtitle">Una selezione dei miei progetti più significativi</p>
+
+            <div class="category-section">
+                <h2 class="category-title">Applicazioni Desktop</h2>
+                
+                <div class="project-card glass-card featured">
+                    <div class="project-header">
+                        <h3>Gestore Turni</h3>
+                        <span class="project-badge">In Evidenza</span>
+                    </div>
+                    <p class="project-description">
+                        Applicazione desktop in <strong>Electron.js</strong> per la gestione automatica dei turni lavorativi. 
+                        Permette di creare ruoli, turni, dipendenti e gruppi, e con un click genera un planning settimanale 
+                        ottimizzato che rispetta tutti i vincoli contrattuali e legali (riposo 11h, ore massime, ecc.).
+                    </p>
+                    <div class="project-features">
+                        <h4>Caratteristiche principali:</h4>
+                        <ul>
+                            <li><strong>Privacy totale:</strong> Database SQLite cifrato AES-256, funzionamento offline</li>
+                            <li><strong>Algoritmo intelligente:</strong> Genera svariate varianti e seleziona la migliore</li>
+                            <li><strong>Rotazione automatica:</strong> Sistema che alterna i turni tra i dipendenti</li>
+                            <li><strong>Modifica manuale:</strong> Planning editabile con verifica vincoli real-time</li>
+                            <li><strong>Gestione vincoli:</strong> Rispetta ore contrattuali, riposi, indisponibilità, gruppi</li>
+                            <li><strong>Esportazione:</strong> Planning esportabile su richiesta dell'utente</li>
+                        </ul>
+                    </div>
+                    <div class="project-contact-icons">
+                        <a href="#" onclick="contactProject('Gestore Turni', 'email'); return false;" title="Contatta via Email">
+                            <i class="fas fa-envelope"></i>
+                        </a>
+                        <a href="#" onclick="contactProject('Gestore Turni', 'whatsapp'); return false;" title="Contatta via WhatsApp">
+                            <i class="fab fa-whatsapp"></i>
+                        </a>
+                        <a href="#" onclick="contactProject('Gestore Turni', 'telegram'); return false;" title="Contatta via Telegram">
+                            <i class="fab fa-telegram"></i>
+                        </a>
+                        <a href="#" onclick="contactProject('Gestore Turni', 'signal'); return false;" title="Contatta via Signal">
+                            <i class="fab fa-signal-messenger"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="category-section">
+                <h2 class="category-title">Progressive Web Apps (PWA)</h2>
+
+                <div class="project-card glass-card" style="background: rgba(240, 240, 240, 0.5); border-left: 4px solid #1a1a1a;">
+                    <h3 style="margin-bottom: 1rem;">Come Installare le PWA</h3>
+                    <p class="project-description" style="margin-bottom: 1.5rem;">
+                        Le Progressive Web Apps possono essere installate come applicazioni native sul tuo dispositivo, 
+                        funzionando anche offline dopo l'installazione.
+                    </p>
+                    
+                    <div class="project-features">
+                        <h4>Per PC o Android</h4>
+                        <p class="project-description">
+                            Installa come Progressive Web App (PWA) per una gestione sicura anche offline sul tuo PC o dispositivo Android.
+                        </p>
+                        <ul style="list-style: decimal; padding-left: 2rem; margin-bottom: 1.5rem;">
+                            <li><strong>Apri nel Browser:</strong> Apri la pagina in un browser supportato (es. Chrome, Edge, Samsung Internet) su HTTPS</li>
+                            <li><strong>Installa l'App:</strong> Clicca sul pulsante di installazione e successivamente premi installa</li>
+                            <li><strong>Accedi all'App:</strong> Gestisci i tuoi dati in modo sicuro, anche offline</li>
+                        </ul>
+
+                        <h4>Per iOS</h4>
+                        <ul style="list-style: decimal; padding-left: 2rem;">
+                            <li><strong>Premi i Tre Puntini:</strong> Tocca i tre puntini accanto alla barra di ricerca in Safari</li>
+                            <li><strong>Seleziona Condividi:</strong> Tocca Condividi dal menu</li>
+                            <li><strong>Tocca Altro:</strong> Seleziona Altro (tre puntini) dalle opzioni di condivisione</li>
+                            <li><strong>Aggiungi alla Schermata Home:</strong> Seleziona Aggiungi alla Schermata Home (quadrato con un + al centro)</li>
+                            <li><strong>Abilita Web App:</strong> Spunta Apri come Web App</li>
+                        </ul>
+                        <p class="project-description" style="margin-top: 1rem; font-style: italic; color: var(--text-secondary);">
+                            <strong>Nota:</strong> Questa funzione non scarica il sito ma permette di visualizzarlo come app. 
+                            Per usare offline, apri la scorciatoia, carica la pagina e poi togli la connessione.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="project-card glass-card">
+                    <div class="project-header">
+                        <h3>Beskytter™</h3>
+                        <span class="project-date">Online dal 7/10/2025</span>
+                    </div>
+                    <p class="project-description">
+                        Progressive Web App per la gestione sicura di credenziali, carte di pagamento e wallet digitali. 
+                        Implementa crittografia AES-256-GCM client-side con salvataggio locale in formato JSON cifrato, 
+                        garantendo privacy assoluta senza trasmissione dati online. Installabile come applicazione nativa 
+                        su tutti i dispositivi.
+                    </p>
+                    <a href="https://pecoraroamal.github.io/Beskytter/" target="_blank" class="project-link">
+                        Vedi progetto →
+                    </a>
+                    <div class="project-contact-icons">
+                        <a href="#" onclick="contactProject('Beskytter', 'email'); return false;" title="Contatta via Email">
+                            <i class="fas fa-envelope"></i>
+                        </a>
+                        <a href="#" onclick="contactProject('Beskytter', 'whatsapp'); return false;" title="Contatta via WhatsApp">
+                            <i class="fab fa-whatsapp"></i>
+                        </a>
+                        <a href="#" onclick="contactProject('Beskytter', 'telegram'); return false;" title="Contatta via Telegram">
+                            <i class="fab fa-telegram"></i>
+                        </a>
+                        <a href="#" onclick="contactProject('Beskytter', 'signal'); return false;" title="Contatta via Signal">
+                            <i class="fab fa-signal-messenger"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="project-card glass-card">
+                    <div class="project-header">
+                        <h3>Salaus™</h3>
+                        <span class="project-date">Online dal 9/11/2025</span>
+                    </div>
+                    <p class="project-description">
+                        Applicazione web per cifratura e decifratura di testo e file. Utilizza lo stesso algoritmo crittografico 
+                        di Beskytter™ per proteggere file .txt e .json con un'interfaccia intuitiva. Gestione tramite chiave 
+                        singola, elaborazione completamente locale senza upload su server esterni.
+                    </p>
+                    <a href="https://pecoraroamal.github.io/Salaus/" target="_blank" class="project-link">
+                        Vedi progetto →
+                    </a>
+                    <div class="project-contact-icons">
+                        <a href="#" onclick="contactProject('Salaus', 'email'); return false;" title="Contatta via Email">
+                            <i class="fas fa-envelope"></i>
+                        </a>
+                        <a href="#" onclick="contactProject('Salaus', 'whatsapp'); return false;" title="Contatta via WhatsApp">
+                            <i class="fab fa-whatsapp"></i>
+                        </a>
+                        <a href="#" onclick="contactProject('Salaus', 'telegram'); return false;" title="Contatta via Telegram">
+                            <i class="fab fa-telegram"></i>
+                        </a>
+                        <a href="#" onclick="contactProject('Salaus', 'signal'); return false;" title="Contatta via Signal">
+                            <i class="fab fa-signal-messenger"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="project-card glass-card">
+                    <div class="project-header">
+                        <h3>Talous™</h3>
+                        <span class="project-date">Online dal 13/11/2025</span>
+                    </div>
+                    <p class="project-description">
+                        Strumento per il monitoraggio e la gestione delle spese personali. Consente di registrare transazioni, 
+                        categorizzare le uscite e visualizzare statistiche di spesa.
+                    </p>
+                    <a href="https://pecoraroamal.github.io/Talous/" target="_blank" class="project-link">
+                        Vedi progetto →
+                    </a>
+                    <div class="project-contact-icons">
+                        <a href="#" onclick="contactProject('Talous', 'email'); return false;" title="Contatta via Email">
+                            <i class="fas fa-envelope"></i>
+                        </a>
+                        <a href="#" onclick="contactProject('Talous', 'whatsapp'); return false;" title="Contatta via WhatsApp">
+                            <i class="fab fa-whatsapp"></i>
+                        </a>
+                        <a href="#" onclick="contactProject('Talous', 'telegram'); return false;" title="Contatta via Telegram">
+                            <i class="fab fa-telegram"></i>
+                        </a>
+                        <a href="#" onclick="contactProject('Talous', 'signal'); return false;" title="Contatta via Signal">
+                            <i class="fab fa-signal-messenger"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="project-card glass-card">
+                    <div class="project-header">
+                        <h3>Verk™</h3>
+                        <span class="project-date">Online dal 19/11/2025</span>
+                    </div>
+                    <p class="project-description">
+                        Applicazione per la catalogazione e il tracciamento di contenuti multimediali (film, serie TV, libri, anime e manga). 
+                        Permette di organizzare collezioni personali, registrare progressi di visione/lettura e gestire liste 
+                        personalizzate. Ideale per appassionati di cinema e letteratura.
+                    </p>
+                    <a href="https://pecoraroamal.github.io/Verk/" target="_blank" class="project-link">
+                        Vedi progetto →
+                    </a>
+                    <div class="project-contact-icons">
+                        <a href="#" onclick="contactProject('Verk', 'email'); return false;" title="Contatta via Email">
+                            <i class="fas fa-envelope"></i>
+                        </a>
+                        <a href="#" onclick="contactProject('Verk', 'whatsapp'); return false;" title="Contatta via WhatsApp">
+                            <i class="fab fa-whatsapp"></i>
+                        </a>
+                        <a href="#" onclick="contactProject('Verk', 'telegram'); return false;" title="Contatta via Telegram">
+                            <i class="fab fa-telegram"></i>
+                        </a>
+                        <a href="#" onclick="contactProject('Verk', 'signal'); return false;" title="Contatta via Signal">
+                            <i class="fab fa-signal-messenger"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="project-card glass-card">
+                    <div class="project-header">
+                        <h3>Zakupy™</h3>
+                        <span class="project-date">Online dal 17/12/2025</span>
+                    </div>
+                    <p class="project-description">
+                        Classica app per la lista della spesa, ripensata in chiave minimalista e privacy-first.
+                        Permette di organizzare i prodotti per punto vendita, gestire acquisti ricorrenti e consultare lo storico degli acquisti, con tutti i dati salvati esclusivamente in locale e senza alcuna raccolta di informazioni personali.
+                    </p>
+                    <a href="https://pecoraroamal.github.io/Zakupy/" target="_blank" class="project-link">
+                        Vedi progetto →
+                    </a>
+                    <div class="project-contact-icons">
+                        <a href="#" onclick="contactProject('Zakupy', 'email'); return false;" title="Contatta via Email">
+                            <i class="fas fa-envelope"></i>
+                        </a>
+                        <a href="#" onclick="contactProject('Zakupy', 'whatsapp'); return false;" title="Contatta via WhatsApp">
+                            <i class="fab fa-whatsapp"></i>
+                        </a>
+                        <a href="#" onclick="contactProject('Zakupy', 'telegram'); return false;" title="Contatta via Telegram">
+                            <i class="fab fa-telegram"></i>
+                        </a>
+                        <a href="#" onclick="contactProject('Zakupy', 'signal'); return false;" title="Contatta via Signal">
+                            <i class="fab fa-signal-messenger"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="category-section">
+                <h2 class="category-title">Strumenti Web</h2>
+                
+                <div class="project-card glass-card">
+                    <div class="project-header">
+                        <h3>CleanTranscribe</h3>
+                        <span class="project-date">Online dal 20/10/2025</span>
+                    </div>
+                    <p class="project-description">
+                        Semplice interfaccia web per pulire testo da trascrizioni di video YouTube. 
+                        Rimuove i timestamp e unisce le righe in un testo continuo, pronto per l'AI.
+                    </p>
+                    <a href="https://pecoraroamal.github.io/CleanTranscribe/" target="_blank" class="project-link">
+                        Vedi progetto →
+                    </a>
+                    <div class="project-contact-icons">
+                        <a href="#" onclick="contactProject('CleanTranscribe', 'email'); return false;" title="Contatta via Email">
+                            <i class="fas fa-envelope"></i>
+                        </a>
+                        <a href="#" onclick="contactProject('CleanTranscribe', 'whatsapp'); return false;" title="Contatta via WhatsApp">
+                            <i class="fab fa-whatsapp"></i>
+                        </a>
+                        <a href="#" onclick="contactProject('CleanTranscribe', 'telegram'); return false;" title="Contatta via Telegram">
+                            <i class="fab fa-telegram"></i>
+                        </a>
+                        <a href="#" onclick="contactProject('CleanTranscribe', 'signal'); return false;" title="Contatta via Signal">
+                            <i class="fab fa-signal-messenger"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="project-card glass-card">
+                    <div class="project-header">
+                        <h3>Calcolatore di Investimento Online</h3>
+                    </div>
+                    <p class="project-description">
+                        Applicazione web per simulare strategie di investimento (Standard e Premium), 
+                        calcolando rendimenti con interessi composti, tassazione al 26% e costi aggiuntivi. 
+                        Sviluppata con <strong>HTML5, CSS3, JavaScript e Bootstrap</strong>.
+                    </p>
+                    <div class="project-features">
+                        <ul>
+                            <li>Input personalizzati (saldo iniziale, risparmi mensili, tasso annuo)</li>
+                            <li>Tabelle interattive modificabili</li>
+                            <li>Esportazione risultati in file TXT</li>
+                            <li>Ottimizzata per periodi lunghi (&gt;20 anni)</li>
+                            <li>Calcolo delle 10 migliori combinazioni di investimento</li>
+                        </ul>
+                    </div>
+                    <a href="https://pecoraroamal.github.io/calcolatore-investimento/" target="_blank" class="project-link">
+                        Vedi progetto →
+                    </a>
+                    <div class="project-contact-icons">
+                        <a href="#" onclick="contactProject('Calcolatore di Investimento', 'email'); return false;" title="Contatta via Email">
+                            <i class="fas fa-envelope"></i>
+                        </a>
+                        <a href="#" onclick="contactProject('Calcolatore di Investimento', 'whatsapp'); return false;" title="Contatta via WhatsApp">
+                            <i class="fab fa-whatsapp"></i>
+                        </a>
+                        <a href="#" onclick="contactProject('Calcolatore di Investimento', 'telegram'); return false;" title="Contatta via Telegram">
+                            <i class="fab fa-telegram"></i>
+                        </a>
+                        <a href="#" onclick="contactProject('Calcolatore di Investimento', 'signal'); return false;" title="Contatta via Signal">
+                            <i class="fab fa-signal-messenger"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="category-section">
+                <h2 class="category-title">Progetti di Stage e Scolastici</h2>
+                
+                <div class="project-card glass-card">
+                    <div class="project-header">
+                        <h3>Stage Scolastico – Sviluppo Applicazioni e Web App</h3>
+                        <span class="project-badge">Stage: 2024</span>
+                    </div>
+                    <p class="project-description">
+                        Durante lo stage scolastico ho progettato e sviluppato due applicazioni complete, occupandomi sia della 
+                        logica di backend sia dell'organizzazione dei dati, con particolare attenzione all'automazione dei processi 
+                        e all'usabilità.
+                    </p>
+                    <div class="project-features">
+                        <h4>Gestione delle Richieste Clienti da File CSV</h4>
+                        <p class="project-description">
+                            Ho sviluppato in autonomia un'applicazione in <strong>Python</strong> con framework <strong>Flask</strong> 
+                            per la gestione delle richieste ricevute quotidianamente dal sito aziendale. Il sistema elaborava 
+                            automaticamente tre file CSV generati a fine giornata e un file TXT contenente i numeri di telefono dei 
+                            clienti già registrati. Le richieste venivano classificate in modo automatico in tre categorie: 
+                            <em>Da contattare</em>, <em>Clienti già noti</em>, <em>Numeri di telefono non validi</em>. 
+                            I risultati venivano infine esportati in un file XLSX strutturato con tre colonne dedicate, semplificando 
+                            il lavoro del reparto commerciale. <strong>Il progetto è stato completato con successo in due giorni</strong>.
+                        </p>
+                        
+                        <h4>Web App per la Gestione delle Ordinazioni di Bevande</h4>
+                        <p class="project-description">
+                            Ho realizzato una web app completa per la gestione delle ordinazioni di bevande aziendali, con sistema di 
+                            autenticazione e ruoli differenziati (amministratore e utente). Ogni bevanda era associata a una 
+                            disponibilità aggiornata in tempo reale tramite un database relazionale, garantendo un controllo accurato 
+                            delle scorte. Al termine di ogni settimana, l'applicazione generava automaticamente un report riepilogativo 
+                            che mostrava, per ciascun dipendente, il numero di bevande ordinate, facilitando il monitoraggio dei 
+                            consumi interni.
+                        </p>
+                    </div>
+                    <div class="project-contact-icons">
+                        <a href="#" onclick="contactProject('Stage Scolastico', 'email'); return false;" title="Contatta via Email">
+                            <i class="fas fa-envelope"></i>
+                        </a>
+                        <a href="#" onclick="contactProject('Stage Scolastico', 'whatsapp'); return false;" title="Contatta via WhatsApp">
+                            <i class="fab fa-whatsapp"></i>
+                        </a>
+                        <a href="#" onclick="contactProject('Stage Scolastico', 'telegram'); return false;" title="Contatta via Telegram">
+                            <i class="fab fa-telegram"></i>
+                        </a>
+                        <a href="#" onclick="contactProject('Stage Scolastico', 'signal'); return false;" title="Contatta via Signal">
+                            <i class="fab fa-signal-messenger"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="project-card glass-card">
+                    <div class="project-header">
+                        <h3>Sito di Ricette con ASP.NET Minimal API</h3>
+                        <span class="project-badge">Progetto conclusivo</span>
+                    </div>
+                    <p class="project-description">
+                        Progetto di sito web dedicato alla cucina sviluppato con un back-end basato su <strong>ASP.NET Minimal API</strong> 
+                        e un front-end responsive realizzato con <strong>HTML5, CSS3, JavaScript e Bootstrap</strong>.
+                    </p>
+                    <p class="project-description">
+                        L'applicazione integra un database <strong>MariaDB</strong> per la gestione delle ricette e delle recensioni 
+                        degli utenti e utilizza l'API esterna <strong>TheMealDB</strong> per consentire la ricerca delle ricette in 
+                        base alla regione di origine.
+                    </p>
+                    <div class="project-features">
+                        <h4>Funzionalità principali</h4>
+                        <ul>
+                            <li>Visualizzazione, creazione, modifica ed eliminazione di ricette e recensioni</li>
+                            <li>Implementazione di endpoint RESTful (GET, POST, PUT, DELETE)</li>
+                            <li>Interfaccia utente dinamica con hamburger menu e card responsive</li>
+                            <li>Ricerca di ricette per regione tramite integrazione API esterna</li>
+                        </ul>
+                        <p class="project-description">
+                            Il progetto è stato realizzato con particolare attenzione all'integrazione di servizi esterni, alla 
+                            struttura delle API e al design responsivo, garantendo un'esperienza utente intuitiva su dispositivi 
+                            desktop e mobile.
+                        </p>
+                    </div>
+                    <div class="project-contact-icons">
+                        <a href="#" onclick="contactProject('Sito di Ricette con ASP.NET', 'email'); return false;" title="Contatta via Email">
+                            <i class="fas fa-envelope"></i>
+                        </a>
+                        <a href="#" onclick="contactProject('Sito di Ricette con ASP.NET', 'whatsapp'); return false;" title="Contatta via WhatsApp">
+                            <i class="fab fa-whatsapp"></i>
+                        </a>
+                        <a href="#" onclick="contactProject('Sito di Ricette con ASP.NET', 'telegram'); return false;" title="Contatta via Telegram">
+                            <i class="fab fa-telegram"></i>
+                        </a>
+                        <a href="#" onclick="contactProject('Sito di Ricette con ASP.NET', 'signal'); return false;" title="Contatta via Signal">
+                            <i class="fab fa-signal-messenger"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer class="footer">
+        <p>&copy; 2025 Portfolio. Tutti i diritti riservati.</p>
+    </footer>
+
+    <script src="js/script.js"></script>
+</body>
+</html>

@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Curriculum Vitae - Formazione ed esperienze">
+    <title>Curriculum | Portfolio</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <div class="grain"></div>
+    
+    <nav class="nav-glass">
+        <div class="nav-container">
+            <a href="index.html" class="nav-logo">Personal Website</a>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="portfolio.html">Portfolio</a></li>
+                <li><a href="curriculum.html" class="active">Curriculum</a></li>
+                <li><a href="contatti.html">Contatti</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <main class="page-main">
+        <div class="page-container">
+            <h1 class="page-title">Curriculum Vitae</h1>
+            <p class="page-subtitle">Formazione, competenze ed esperienze professionali</p>
+
+            <div class="cv-section glass-card">
+                <h2 class="cv-section-title">
+                    <i class="fas fa-graduation-cap"></i>
+                    Formazione
+                </h2>
+                <div class="cv-item">
+                    <h3>Diploma in Informatica e Telecomunicazioni</h3>
+                    <p class="cv-meta">I.I.S.S. "Alessandro Greppi", Monticello Brianza (LC) • 2020–2025</p>
+                    <p class="cv-description">
+                        Percorso formativo incentrato sullo sviluppo web full-stack, sulla gestione di sistemi informativi 
+                        e database relazionali e non relazionali, sull'impiego di tecnologie di containerizzazione con Docker. 
+                        Esperienza maturata attraverso progetti PCTO in contesti aziendali, con focus su problem-solving, 
+                        analisi dei requisiti e progettazione di sistemi informativi complessi.
+                    </p>
+                </div>
+            </div>
+
+            <div class="cv-section glass-card">
+                <h2 class="cv-section-title">
+                    <i class="fas fa-code"></i>
+                    Competenze Tecniche
+                </h2>
+                <div class="skills-grid">
+                    <div class="skill-category">
+                        <h4>Linguaggi di Programmazione</h4>
+                        <div class="skill-tags">
+                            <span class="skill-tag">HTML</span>
+                            <span class="skill-tag">CSS</span>
+                            <span class="skill-tag">JavaScript</span>
+                            <span class="skill-tag">C#</span>
+                            <span class="skill-tag">Python</span>
+                            <span class="skill-tag">SQL</span>
+                            <span class="skill-tag">MQL</span>
+                        </div>
+                    </div>
+                    <div class="skill-category">
+                        <h4>Framework e Tecnologie Web</h4>
+                        <div class="skill-tags">
+                            <span class="skill-tag">ASP.NET Core</span>
+                            <span class="skill-tag">Node.js</span>
+                            <span class="skill-tag">Express</span>
+                            <span class="skill-tag">Flask</span>
+                            <span class="skill-tag">Bootstrap</span>
+                            <span class="skill-tag">LINQ</span>
+                        </div>
+                    </div>
+                    <div class="skill-category">
+                        <h4>Database</h4>
+                        <div class="skill-tags">
+                            <span class="skill-tag">MySQL</span>
+                            <span class="skill-tag">MariaDB</span>
+                            <span class="skill-tag">SQL Server</span>
+                            <span class="skill-tag">MongoDB</span>
+                            <span class="skill-tag">Entity Framework</span>
+                        </div>
+                    </div>
+                    <div class="skill-category">
+                        <h4>DevOps e Strumenti</h4>
+                        <div class="skill-tags">
+                            <span class="skill-tag">Docker</span>
+                            <span class="skill-tag">Docker Compose</span>
+                            <span class="skill-tag">Git</span>
+                            <span class="skill-tag">GitHub</span>
+                        </div>
+                    </div>
+                    <div class="skill-category">
+                        <h4>API e Sicurezza</h4>
+                        <div class="skill-tags">
+                            <span class="skill-tag">RESTful APIs</span>
+                            <span class="skill-tag">OAuth 2.0</span>
+                            <span class="skill-tag">XSS/CSRF Prevention</span>
+                            <span class="skill-tag">SQL Injection Prevention</span>
+                        </div>
+                    </div>
+                    <div class="skill-category">
+                        <h4>Progettazione</h4>
+                        <div class="skill-tags">
+                            <span class="skill-tag">UML</span>
+                            <span class="skill-tag">E/R Diagrams</span>
+                            <span class="skill-tag">Database Normalization</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="cv-section glass-card">
+                <h2 class="cv-section-title">
+                    <i class="fas fa-briefcase"></i>
+                    Esperienze Professionali
+                </h2>
+                
+                <div class="cv-item">
+                    <h3>Stage Scolastico – Sviluppo Applicazione e Web App</h3>
+                    <p class="cv-meta">10–21 giugno 2024</p>
+                    <p class="cv-description">
+                        <strong>Gestione Richieste Clienti da CSV</strong><br>
+                        Creazione autonoma di un programma (Python e Flask) per la gestione delle richieste ricevute quotidianamente 
+                        tramite il sito aziendale. Il programma elaborava tre file CSV generati a fine giornata e un file TXT contenente 
+                        i numeri di telefono dei clienti già noti. Il sistema suddivideva automaticamente le richieste in tre categorie: 
+                        "Da contattare", "Già noti" e "Numero di telefono errato". I risultati venivano esportati in un file XLSX con 
+                        tre colonne dedicate. <strong>Progetto completato in due giorni</strong>, dimostrando efficienza e autonomia.
+                    </p>
+                    <p class="cv-description">
+                        <strong>Web App per Ordinazioni di Bevande</strong><br>
+                        Realizzazione di una web app completa per la gestione delle ordinazioni di bevande aziendali, con ruoli di 
+                        amministratore e utente. Ogni bevanda era associata a una disponibilità aggiornata in tempo reale grazie a 
+                        un database relazionale. A fine settimana, la web app generava un report che indicava, per ciascun dipendente, 
+                        il numero di bevande ordinate durante la settimana.
+                    </p>
+                </div>
+            </div>
+
+            <div class="cv-section glass-card">
+                <h2 class="cv-section-title">
+                    <i class="fas fa-language"></i>
+                    Competenze Linguistiche
+                </h2>
+                <div class="language-grid">
+                    <div class="language-item">
+                        <h4>Italiano</h4>
+                        <p>Madrelingua</p>
+                    </div>
+                    <div class="language-item">
+                        <h4>Inglese</h4>
+                        <p>Livello B2</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="cv-actions">
+                <a href="assets/cv.pdf" class="btn-glass" download>
+                    <i class="fas fa-download"></i>
+                    <span>Scarica CV PDF</span>
+                </a>
+                <a href="contatti.html" class="btn-glass btn-secondary">
+                    <span>Contattami</span>
+                </a>
+            </div>
+        </div>
+    </main>
+
+    <footer class="footer">
+        <p>&copy; 2025 Portfolio. Tutti i diritti riservati.</p>
+    </footer>
+
+    <script src="js/script.js"></script>
+</body>
+</html>

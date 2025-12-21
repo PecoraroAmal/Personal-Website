@@ -1,168 +1,278 @@
-// Funzione per l'indicatore di scroll
-function updateScrollIndicator() {
-  const scrollTop = window.pageYOffset;
-  const docHeight = document.documentElement.scrollHeight - window.innerHeight;
-  const scrollPercent = (scrollTop / docHeight) * 100;
-  document.querySelector('.scroll-indicator').style.transform = `scaleX(${scrollPercent / 100})`;
-}
+// ==========================================
+// SMOOTH SCROLL E ANIMAZIONI
+// ==========================================
 
-// Funzione per gestire la navigazione attiva
-function updateActiveNav() {
-  const sections = document.querySelectorAll('section');
-  const navLinks = document.querySelectorAll('.nav-container a');
-  
-  let current = '';
-  sections.forEach(section => {
-    const sectionTop = section.offsetTop;
-    const sectionHeight = section.clientHeight;
-    if (window.pageYOffset >= sectionTop - 100) {
-      current = section.getAttribute('id');
-    }
-  });
-
-  navLinks.forEach(link => {
-    link.classList.remove('active');
-    if (link.getAttribute('href') === `#${current}`) {
-      link.classList.add('active');
-    }
-  });
-}
-
-// Funzione per scroll reveal
-function revealElements() {
-  const reveals = document.querySelectorAll('.scroll-reveal, .scroll-reveal-left, .scroll-reveal-right');
-  
-  reveals.forEach(element => {
-    const windowHeight = window.innerHeight;
-    const elementTop = element.getBoundingClientRect().top;
-    const elementVisible = 150;
-    
-    if (elementTop < windowHeight - elementVisible) {
-      element.classList.add('revealed');
-    }
-  });
-}
-
-// Funzione per copiare l'email
-function copyEmail() {
-  const email = document.getElementById('email').textContent;
-  navigator.clipboard.writeText(email).then(() => {
-    const button = document.querySelector('.copy-btn');
-    const originalIcon = button.innerHTML;
-    button.innerHTML = '<i class="fas fa-check"></i>';
-    button.style.background = '#10b981';
-    
-    setTimeout(() => {
-      button.innerHTML = originalIcon;
-      button.style.background = 'var(--primary-color)';
-    }, 2000);
-  }).catch(err => {
-    console.error('Errore nella copia:', err);
-    // Fallback per browser più vecchi
-    const textArea = document.createElement('textarea');
-    textArea.value = email;
-    document.body.appendChild(textArea);
-    textArea.select();
-    document.execCommand('copy');
-    document.body.removeChild(textArea);
-    
-    const button = document.querySelector('.copy-btn');
-    const originalIcon = button.innerHTML;
-    button.innerHTML = '<i class="fas fa-check"></i>';
-    button.style.background = '#10b981';
-    
-    setTimeout(() => {
-      button.innerHTML = originalIcon;
-      button.style.background = 'var(--primary-color)';
-    }, 2000);
-  });
-}
-
-// Funzione per smooth scroll
-function smoothScroll(target) {
-  const element = document.querySelector(target);
-  if (element) {
-    const offsetTop = element.offsetTop - 80; // Account for fixed header
-    window.scrollTo({
-      top: offsetTop,
-      behavior: 'smooth'
-    });
-  }
-}
-
-// Inizializzazione quando il DOM è caricato
 document.addEventListener('DOMContentLoaded', function() {
-  // Aggiungi classi per scroll reveal agli elementi
-  const elementsToReveal = [
-    '.section-title',
-    '.project-card',
-    '.cv-section',
-    '.contact-links li'
-  ];
-  
-  elementsToReveal.forEach(selector => {
-    const elements = document.querySelectorAll(selector);
-    elements.forEach((element, index) => {
-      if (selector === '.project-card') {
-        // Alterna left e right per i progetti
-        element.classList.add(index % 2 === 0 ? 'scroll-reveal-left' : 'scroll-reveal-right');
-      } else if (selector === '.contact-links li') {
-        // Bottom reveal per i contatti
-        element.classList.add('scroll-reveal');
-      } else {
-        element.classList.add('scroll-reveal');
-      }
-    });
-  });
-  
-  // Event listeners
-  window.addEventListener('scroll', () => {
-    updateScrollIndicator();
-    updateActiveNav();
-    revealElements();
-  });
-  
-  // Gestione click sui link di navigazione
-  document.querySelectorAll('.nav-container a').forEach(link => {
-    link.addEventListener('click', function(e) {
-      e.preventDefault();
-      const target = this.getAttribute('href');
-      smoothScroll(target);
-    });
-  });
-  
-  // Reveal iniziale per elementi già visibili
-  revealElements();
-  updateScrollIndicator();
-  updateActiveNav();
-  
-  // Parallax leggero per il background
-  window.addEventListener('scroll', () => {
-    const scrolled = window.pageYOffset;
-    const parallax = scrolled * 0.5;
-    document.body.style.backgroundPosition = `center ${parallax}px`;
-  });
+    // Animazioni al caricamento pagina
+    animateOnLoad();
+    
+    // Observer per animazioni scroll
+    setupScrollAnimations();
+    
+    // Active link nella navigazione
+    updateActiveNavLink();
 });
 
-// Intersection Observer per performance migliore (alternativa più moderna)
-if ('IntersectionObserver' in window) {
-  const observerOptions = {
-    threshold: 0.1,
-    rootMargin: '0px 0px -50px 0px'
-  };
-  
-  const observer = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        entry.target.classList.add('revealed');
-        observer.unobserve(entry.target);
-      }
+// Animazioni al caricamento
+function animateOnLoad() {
+    const elements = document.querySelectorAll('.glass-card, .stat-item, .project-card, .cv-section, .contact-card');
+    
+    elements.forEach((el, index) => {
+        el.style.opacity = '0';
+        el.style.transform = 'translateY(30px)';
+        
+        setTimeout(() => {
+            el.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+            el.style.opacity = '1';
+            el.style.transform = 'translateY(0)';
+        }, 100 * index);
     });
-  }, observerOptions);
-  
-  // Osserva gli elementi quando il DOM è pronto
-  document.addEventListener('DOMContentLoaded', () => {
-    const elementsToObserve = document.querySelectorAll('.scroll-reveal, .scroll-reveal-left, .scroll-reveal-right');
-    elementsToObserve.forEach(el => observer.observe(el));
-  });
+}
+
+// Intersection Observer per animazioni scroll
+function setupScrollAnimations() {
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('visible');
+            }
+        });
+    }, {
+        threshold: 0.1,
+        rootMargin: '0px 0px -50px 0px'
+    });
+    
+    const animatedElements = document.querySelectorAll('.glass-card, .project-card, .cv-section');
+    animatedElements.forEach(el => observer.observe(el));
+}
+
+// Aggiorna link attivo nella navigazione
+function updateActiveNavLink() {
+    const currentPage = window.location.pathname.split('/').pop() || 'index.html';
+    const navLinks = document.querySelectorAll('.nav-links a');
+    
+    navLinks.forEach(link => {
+        const href = link.getAttribute('href');
+        if (href === currentPage || (currentPage === '' && href === 'index.html')) {
+            link.classList.add('active');
+        } else {
+            link.classList.remove('active');
+        }
+    });
+}
+
+// ==========================================
+// FUNZIONE COPIA EMAIL
+// ==========================================
+
+function copyEmail() {
+    const email = document.getElementById('email').textContent;
+    
+    // Copia negli appunti
+    navigator.clipboard.writeText(email).then(() => {
+        // Mostra feedback visivo
+        showCopyFeedback();
+    }).catch(err => {
+        console.error('Errore nella copia:', err);
+        // Fallback per browser più vecchi
+        copyEmailFallback(email);
+    });
+}
+
+function showCopyFeedback() {
+    const btn = event.target.closest('button');
+    const originalHTML = btn.innerHTML;
+    
+    btn.innerHTML = `
+        <i class="fas fa-check"></i>
+        <span>Copiato!</span>
+    `;
+    btn.style.background = 'rgba(34, 197, 94, 0.1)';
+    btn.style.color = '#16a34a';
+    
+    setTimeout(() => {
+        btn.innerHTML = originalHTML;
+        btn.style.background = '';
+        btn.style.color = '';
+    }, 2000);
+}
+
+function copyEmailFallback(email) {
+    // Metodo fallback per browser più vecchi
+    const textarea = document.createElement('textarea');
+    textarea.value = email;
+    textarea.style.position = 'fixed';
+    textarea.style.opacity = '0';
+    document.body.appendChild(textarea);
+    textarea.select();
+    
+    try {
+        document.execCommand('copy');
+        showCopyFeedback();
+    } catch (err) {
+        console.error('Errore nella copia fallback:', err);
+    }
+    
+    document.body.removeChild(textarea);
+}
+
+// ==========================================
+// EFFETTI HOVER SEMPLICI
+// ==========================================
+
+// Gli effetti hover sono gestiti direttamente nel CSS
+
+// ==========================================
+// LOADING PROGRESSIVO IMMAGINI
+// ==========================================
+
+document.addEventListener('DOMContentLoaded', function() {
+    const images = document.querySelectorAll('img');
+    
+    images.forEach(img => {
+        if (img.complete) {
+            img.classList.add('loaded');
+        } else {
+            img.addEventListener('load', function() {
+                img.classList.add('loaded');
+            });
+        }
+    });
+});
+
+// ==========================================
+// PERFORMANCE - DEBOUNCE
+// ==========================================
+
+function debounce(func, wait) {
+    let timeout;
+    return function executedFunction(...args) {
+        const later = () => {
+            clearTimeout(timeout);
+            func(...args);
+        };
+        clearTimeout(timeout);
+        timeout = setTimeout(later, wait);
+    };
+}
+
+// Ottimizza eventi di resize
+window.addEventListener('resize', debounce(() => {
+    // Eventuali operazioni da eseguire al resize
+    updateActiveNavLink();
+}, 250));
+
+// ==========================================
+// SCROLL SMOOTH PER LINK INTERNI
+// ==========================================
+
+document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    anchor.addEventListener('click', function (e) {
+        e.preventDefault();
+        const target = document.querySelector(this.getAttribute('href'));
+        
+        if (target) {
+            const offset = 80; // Altezza navbar
+            const targetPosition = target.getBoundingClientRect().top + window.pageYOffset - offset;
+            
+            window.scrollTo({
+                top: targetPosition,
+                behavior: 'smooth'
+            });
+        }
+    });
+});
+
+// ==========================================
+// PREFETCH LINKS
+// ==========================================
+
+// Precarica pagine al hover per navigazione istantanea
+document.addEventListener('DOMContentLoaded', function() {
+    const navLinks = document.querySelectorAll('.nav-links a, .btn-glass[href^="portfolio"], .btn-glass[href^="curriculum"], .btn-glass[href^="contatti"]');
+    
+    navLinks.forEach(link => {
+        link.addEventListener('mouseenter', function() {
+            const href = this.getAttribute('href');
+            if (href && !href.startsWith('#') && !href.startsWith('http')) {
+                const prefetchLink = document.createElement('link');
+                prefetchLink.rel = 'prefetch';
+                prefetchLink.href = href;
+                document.head.appendChild(prefetchLink);
+            }
+        });
+    });
+});
+
+// ==========================================
+// EASTER EGG - KONAMI CODE
+// ==========================================
+
+let konamiCode = [];
+const konamiPattern = ['ArrowUp', 'ArrowUp', 'ArrowDown', 'ArrowDown', 'ArrowLeft', 'ArrowRight', 'ArrowLeft', 'ArrowRight', 'b', 'a'];
+
+document.addEventListener('keydown', function(e) {
+    konamiCode.push(e.key);
+    konamiCode = konamiCode.slice(-10);
+    
+    if (konamiCode.join(',') === konamiPattern.join(',')) {
+        activateEasterEgg();
+    }
+});
+
+function activateEasterEgg() {
+    document.body.style.animation = 'rainbow 2s linear infinite';
+    
+    const style = document.createElement('style');
+    style.innerHTML = `
+        @keyframes rainbow {
+            0% { filter: hue-rotate(0deg); }
+            100% { filter: hue-rotate(360deg); }
+        }
+    `;
+    document.head.appendChild(style);
+    
+    setTimeout(() => {
+        document.body.style.animation = '';
+        style.remove();
+    }, 5000);
+}
+
+// ==========================================
+// CONSOLE MESSAGE
+// ==========================================
+
+console.log('%c👋 Ciao!', 'font-size: 24px; font-weight: bold;');
+console.log('%cSe stai guardando la console, significa che sei curioso! 🚀', 'font-size: 14px;');
+console.log('%cSe vuoi saperne di più sui miei progetti, contattami!', 'font-size: 14px; color: #666;');
+
+// ==========================================
+// CONTATTO PROGETTO
+// ==========================================
+
+function contactProject(projectName, method) {
+    const message = `Ciao ho visto il tuo progetto ${projectName} sapresti darmi qualche dettaglio in più?`;
+    
+    switch(method) {
+        case 'email':
+            const emailSubject = encodeURIComponent(`Richiesta info: ${projectName}`);
+            const emailBody = encodeURIComponent(message);
+            window.open(`https://mail.google.com/mail/?view=cm&fs=1&to=amal.pecoraro2006@gmail.com&su=${emailSubject}&body=${emailBody}`, '_blank');
+            break;
+            
+        case 'whatsapp':
+            const whatsappMessage = encodeURIComponent(message);
+            window.open(`https://wa.me/393388331534?text=${whatsappMessage}`, '_blank');
+            break;
+            
+        case 'telegram':
+            const telegramMessage = encodeURIComponent(message);
+            window.open(`https://t.me/pecoraroamal?text=${telegramMessage}`, '_blank');
+            break;
+            
+        case 'signal':
+            const signalMessage = encodeURIComponent(message);
+            window.open(`https://signal.me/#eu/841eOrzUONhq0faytC1W6BJ4StL-Avmp3c-kBQzHZBSWZ_jyrb9O6pRZ7hbhBwTn?text=${signalMessage}`, '_blank');
+            break;
+    }
 }
