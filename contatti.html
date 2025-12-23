@@ -99,19 +99,128 @@
                 </a>
             </div>
 
+            <div class="quick-contact-section glass-card">
+                <h3 class="text-center">Contatto Rapido</h3>
+                <p class="quick-contact-subtitle text-center">Compila i campi per creare un messaggio rapidamente</p>
+                
+                <div class="inline-message-form">
+                    <select id="saluto" class="inline-select">
+                        <option>Salve</option>
+                        <option>Ciao</option>
+                        <option>Buongiorno</option>
+                        <option>Buon pomeriggio</option>
+                        <option>Buona sera</option>
+                    </select>
+                    Amal,<br>
+                    Sono
+                    <input type="text" id="nome" class="inline-input" placeholder="nome">
+                    gestisco
+                    <input type="text" id="nomeLocale" class="inline-input" placeholder="nome locale">,
+                    <select id="tipoLocale" class="inline-select">
+                        <option>un albergo</option>
+                        <option>un bar</option>
+                        <option>una caffetteria</option>
+                        <option>un fastfood</option>
+                        <option>una gelateria</option>
+                        <option>un magazzino</option>
+                        <option>un pub</option>
+                        <option>una discoteca</option>
+                        <option>un negozio</option>
+                        <option>un ristorante</option>
+                        <option>un supermercato</option>
+                        <option>-</option>
+                    </select>
+                    con
+                    <input type="number" id="numeroDipendenti" class="inline-input inline-number" placeholder="N°" min="1">
+                    dipendenti circa e
+                    <input type="number" id="numeroSedi" class="inline-input inline-number" placeholder="N°" value="1" min="1">
+                    <span id="sediText">sede</span>.<br><br>
+
+                    <select id="fraseBisogno" class="inline-select">
+                        <option>Avrei bisogno di</option>
+                        <option>Sarei interessato a</option>
+                        <option>Sto valutando l'implementazione di</option>
+                        <option>Vorrei informazioni su</option>
+                        <option>Necessito di</option>
+                    </select>
+                    un gestore di turni, sono disponibile per un incontro di presentazione il giorno
+                    <input type="date" id="giornoIncontro" class="inline-input inline-date">
+                    alle ore
+                    <input type="time" id="oraIncontro" class="inline-input inline-time">
+                    presso
+                    <input type="text" id="viaIncontro" class="inline-input" placeholder="via">.<br><br>
+                    Grazie
+                    <select id="salutoFinale" class="inline-select">
+                        <option value="">-</option>
+                        <option value="e Buona giornata">e Buona giornata</option>
+                        <option value="e Buona serata">e Buona serata</option>
+                    </select>,<br>
+
+                    <span id="nomeFirmaDisplay"></span>
+                    <script>
+                        document.getElementById('nome').addEventListener('input', function() {
+                            document.getElementById('nomeFirmaDisplay').textContent = this.value;
+                        });
+                    </script>
+                </div>
+
+                <div class="quick-contact-actions">
+                    <button type="button" onclick="sendDirectViaGmail()" class="btn-glass btn-send">
+                        <i class="fas fa-envelope"></i>
+                        <span>Gmail</span>
+                    </button>
+                    <button type="button" onclick="sendDirectViaWhatsApp()" class="btn-glass btn-send">
+                        <i class="fab fa-whatsapp"></i>
+                        <span>WhatsApp</span>
+                    </button>
+                    <button type="button" onclick="sendDirectViaTelegram()" class="btn-glass btn-send">
+                        <i class="fab fa-telegram"></i>
+                        <span>Telegram</span>
+                    </button>
+                    <button type="button" onclick="sendDirectViaSignal()" class="btn-glass btn-send">
+                        <i class="fa-brands fa-signal-messenger"></i>
+                        <span>Signal</span>
+                    </button>
+                </div>
+                <script>
+                function sendDirectViaGmail() {
+                    const message = generateInlineMessage();
+                    if (!message) return;
+                    const subject = 'Richiesta informazioni gestore turni';
+                    window.open(`https://mail.google.com/mail/?view=cm&fs=1&to=amal.pecoraro2006@gmail.com&su=${encodeURIComponent(subject)}&body=${encodeURIComponent(message)}`, '_blank');
+                }
+                function sendDirectViaWhatsApp() {
+                    const message = generateInlineMessage();
+                    if (!message) return;
+                    window.open(`https://wa.me/393388331534?text=${encodeURIComponent(message)}`, '_blank');
+                }
+                function sendDirectViaTelegram() {
+                    const message = generateInlineMessage();
+                    if (!message) return;
+                    window.open(`https://t.me/pecoraroamal?text=${encodeURIComponent(message)}`, '_blank');
+                }
+                function sendDirectViaSignal() {
+                    const message = generateInlineMessage();
+                    if (!message) return;
+                    window.open(`https://signal.me/#eu/841eOrzUONhq0faytC1W6BJ4StL-Avmp3c-kBQzHZBSWZ_jyrb9O6pRZ7hbhBwTn?text=${encodeURIComponent(message)}`, '_blank');
+                }
+                </script>
+            </div>
+
             <div class="contact-footer glass-card">
                 <h3>Disponibile per:</h3>
                 <div class="availability-tags">
-                    <span class="availability-tag">Progetti Freelance</span>
-                    <span class="availability-tag">Opportunità di Lavoro</span>
                     <span class="availability-tag">Consulenze</span>
+                    <span class="availability-tag">Opportunità di Lavoro</span>
+                    <span class="availability-tag">Progetti</span>
+                    <span class="availability-tag">Sviluppo Software</span>
                 </div>
             </div>
         </div>
     </main>
 
     <footer class="footer">
-        <p>&copy; 2025 Pecoraro Amal Portfolio. Tutti i diritti riservati.</p>
+        <p>&copy; 2025 Pecoraro Amal Personal Website. Tutti i diritti riservati.</p>
     </footer>
 
     <script src="js/script.js"></script>

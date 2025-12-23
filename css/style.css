@@ -1,3 +1,7 @@
+/* Centra il testo */
+.text-center {
+    text-align: center;
+}
 /* ==========================================
    RESET E BASE
    ========================================== */
@@ -919,5 +923,242 @@ body {
     
     .project-contact-icons i {
         font-size: 1rem;
+    }
+}
+/* ==========================================
+
+/* ==========================================
+   CONTATTO RAPIDO
+   ========================================== */
+.quick-contact-section {
+    margin-top: var(--spacing-lg);
+    margin-bottom: var(--spacing-lg);
+}
+
+.quick-contact-section h3 {
+    font-size: 1.75rem;
+    margin-bottom: 0.5rem;
+    color: var(--text-primary);
+}
+
+.quick-contact-subtitle {
+    color: var(--text-secondary);
+    margin-bottom: var(--spacing-md);
+}
+
+.inline-message-form {
+    padding: 2rem;
+    background: rgba(255, 255, 255, 0.5);
+    border-radius: 12px;
+    border: 1px solid var(--border-color);
+    line-height: 2.5;
+    font-size: 1.05rem;
+    color: var(--text-primary);
+    margin-bottom: 2rem;
+}
+
+.inline-input,
+.inline-select {
+    display: inline-block;
+    padding: 0.5rem 0.75rem;
+    border: 1px solid var(--border-color);
+    border-radius: 6px;
+    background: rgba(255, 255, 255, 0.9);
+    font-family: var(--font-system);
+    font-size: 0.95rem;
+    color: var(--text-primary);
+    transition: all 0.3s ease;
+    vertical-align: middle;
+    margin: 0 0.3rem;
+}
+
+.inline-input {
+    min-width: 140px;
+}
+
+.inline-input:focus,
+.inline-select:focus {
+    outline: none;
+    border-color: var(--text-primary);
+    background: rgba(255, 255, 255, 1);
+    box-shadow: 0 0 0 3px rgba(0, 0, 0, 0.05);
+}
+
+.inline-input::placeholder {
+    color: var(--text-secondary);
+    opacity: 0.5;
+    font-style: italic;
+}
+
+.inline-select {
+    cursor: pointer;
+    padding-right: 2rem;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 12 12'%3E%3Cpath fill='%231a1a1a' d='M6 9L1 4h10z'/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: right 0.5rem center;
+    background-size: 10px;
+    appearance: none;
+}
+
+.inline-number {
+    min-width: 70px;
+    max-width: 90px;
+}
+
+.inline-date {
+    min-width: 150px;
+}
+
+.inline-time {
+    min-width: 110px;
+}
+
+#sediText {
+    font-weight: 600;
+    color: var(--text-primary);
+}
+
+#nomeFirmaDisplay {
+    font-weight: 600;
+    color: var(--text-primary);
+}
+
+.quick-contact-actions {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    margin-bottom: 1.5rem;
+    flex-wrap: wrap;
+}
+
+.btn-send {
+    flex: 1;
+    min-width: 140px;
+    max-width: 180px;
+    padding: 0.875rem 1.5rem;
+}
+
+.preview-toggle {
+    text-align: center;
+    margin-bottom: 1rem;
+}
+
+.btn-link {
+    background: none;
+    border: none;
+    color: var(--text-secondary);
+    cursor: pointer;
+    font-size: 0.9rem;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.5rem 1rem;
+    transition: all 0.3s ease;
+    border-radius: 6px;
+}
+
+.btn-link:hover {
+    color: var(--text-primary);
+    background: rgba(0, 0, 0, 0.03);
+}
+
+.message-preview-section {
+    margin-top: 2rem;
+    padding-top: 2rem;
+    border-top: 1px solid var(--border-color);
+    animation: slideDown 0.3s ease;
+}
+
+@keyframes slideDown {
+    from {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.message-preview-section h4 {
+    font-size: 1.125rem;
+    margin-bottom: 1rem;
+    color: var(--text-primary);
+}
+
+.generated-message {
+    padding: 1.5rem;
+    background: rgba(255, 255, 255, 0.7);
+    border-radius: 8px;
+    white-space: pre-wrap;
+    font-size: 0.95rem;
+    line-height: 1.8;
+    color: var(--text-primary);
+    border: 1px solid var(--border-color);
+    margin-bottom: 1.5rem;
+}
+
+.send-options {
+    margin-top: 1.5rem;
+}
+
+.send-options h4 {
+    font-size: 1rem;
+    margin-bottom: 1rem;
+    color: var(--text-primary);
+}
+
+.send-buttons {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.75rem;
+}
+
+@media (max-width: 768px) {
+    .quick-contact-section h3 {
+        font-size: 1.5rem;
+    }
+    
+    .inline-message-form {
+        padding: 1.5rem;
+        font-size: 0.95rem;
+        line-height: 2.2;
+    }
+    
+    .inline-input,
+    .inline-select {
+        font-size: 0.875rem;
+        padding: 0.4rem 0.6rem;
+        margin: 0.2rem;
+    }
+    
+    .inline-input {
+        min-width: 110px;
+    }
+    
+    .inline-date {
+        min-width: 130px;
+    }
+    
+    .inline-time {
+        min-width: 95px;
+    }
+    
+    .quick-contact-actions {
+        flex-direction: column;
+    }
+    
+    .btn-send {
+        max-width: 100%;
+        width: 100%;
+    }
+    
+    .send-buttons {
+        gap: 0.5rem;
+    }
+    
+    .send-buttons .btn-small {
+        flex: 1 1 calc(50% - 0.25rem);
+        min-width: 0;
     }
 }
