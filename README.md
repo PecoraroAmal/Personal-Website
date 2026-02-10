@@ -18,7 +18,7 @@ Il portfolio è un **sito web** con design glassmorphism minimalista realizzato 
   * Strumenti Web (CleanTranscribe, Calcolatore Investimento)
   * Progetti di Stage e Scolastici
 * **Curriculum** – CV dettagliato con formazione, competenze tecniche ed esperienze professionali
-* **Contatti** – Collegamenti diretti a Email (Gmail), GitHub, LinkedIn, WhatsApp, Telegram, Signal
+* **Contatti** – Collegamenti diretti a Email (Gmail), GitHub, LinkedIn, Telegram, Signal
 
 Ogni progetto include icone di contatto per richiedere informazioni direttamente tramite i vari canali di comunicazione.
 
