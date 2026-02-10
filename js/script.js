@@ -117,12 +117,6 @@ function copyEmailFallback(email) {
 }
 
 // ==========================================
-// EFFETTI HOVER SEMPLICI
-// ==========================================
-
-// Gli effetti hover sono gestiti direttamente nel CSS
-
-// ==========================================
 // LOADING PROGRESSIVO IMMAGINI
 // ==========================================
 
