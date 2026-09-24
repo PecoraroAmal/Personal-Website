@@ -62,6 +62,44 @@ function updateActiveNavLink() {
 }
 
 // ==========================================
+// TAB PROGETTI
+// ==========================================
+
+document.addEventListener('DOMContentLoaded', function() {
+    const tabs = Array.from(document.querySelectorAll('.project-tab'));
+    if (!tabs.length) return;
+
+    function activateTab(tab, focus) {
+        tabs.forEach(t => {
+            const active = t === tab;
+            t.classList.toggle('active', active);
+            t.setAttribute('aria-selected', active);
+            t.tabIndex = active ? 0 : -1;
+            const panel = document.getElementById(t.getAttribute('aria-controls'));
+            panel.hidden = !active;
+            panel.classList.toggle('active', active);
+        });
+        if (focus) tab.focus();
+    }
+
+    tabs.forEach((tab, i) => {
+        tab.addEventListener('click', () => {
+            activateTab(tab);
+            history.replaceState(null, '', '#' + tab.getAttribute('aria-controls'));
+        });
+        tab.addEventListener('keydown', e => {
+            const next = { ArrowRight: i + 1, ArrowLeft: i - 1, Home: 0, End: tabs.length - 1 }[e.key];
+            if (next === undefined) return;
+            e.preventDefault();
+            activateTab(tabs[(next + tabs.length) % tabs.length], true);
+        });
+    });
+
+    const fromHash = tabs.find(t => '#' + t.getAttribute('aria-controls') === window.location.hash);
+    activateTab(fromHash || tabs[0]);
+});
+
+// ==========================================
 // FUNZIONE COPIA EMAIL
 // ==========================================
 

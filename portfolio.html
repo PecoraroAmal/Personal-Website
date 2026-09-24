@@ -34,13 +34,181 @@
             <h1 class="page-title">Portfolio Progetti</h1>
             <p class="page-subtitle">Una selezione dei miei progetti più significativi</p>
 
-            <div class="category-section">
-                <h2 class="category-title">Applicazioni Desktop</h2>
-                
+            <div class="project-tabs" role="tablist" aria-label="Categorie di progetti">
+                <button type="button" class="project-tab active" role="tab" id="tab-in-evidenza" aria-controls="in-evidenza" aria-selected="true">In Evidenza</button>
+                <button type="button" class="project-tab" role="tab" id="tab-telegram-bot" aria-controls="telegram-bot" aria-selected="false">Telegram Bot</button>
+                <button type="button" class="project-tab" role="tab" id="tab-desktop" aria-controls="desktop" aria-selected="false">Applicazioni Desktop</button>
+                <button type="button" class="project-tab" role="tab" id="tab-pwa" aria-controls="pwa" aria-selected="false">Progressive Web Apps (PWA)</button>
+                <button type="button" class="project-tab" role="tab" id="tab-strumenti-web" aria-controls="strumenti-web" aria-selected="false">Strumenti Web</button>
+                <button type="button" class="project-tab" role="tab" id="tab-stage" aria-controls="stage" aria-selected="false">Progetti di Stage e Scolastici</button>
+            </div>
+
+            <div class="category-section tab-panel active" id="in-evidenza" role="tabpanel" aria-labelledby="tab-in-evidenza">
+                <h2 class="category-title">In Evidenza</h2>
                 <div class="project-card glass-card featured">
                     <div class="project-header">
-                        <h3>Gestore Turni</h3>
+                        <h3>AGENDiN</h3>
                         <span class="project-badge">In Evidenza</span>
+                    </div>
+                    <p class="project-description">
+                        Gestionale a tutto tondo, installabile come <strong>PWA</strong>, pensato per organizzare in un unico posto 
+                        le attività di <strong>SPORTiN</strong>.
+                    </p>
+                    <div class="project-features">
+                        <h4>Caratteristiche principali:</h4>
+                        <ul>
+                            <li><strong>Volontari e famiglie:</strong> gestione completa delle anagrafiche</li>
+                            <li><strong>Calendario in app:</strong> eventi e attività sempre a portata di mano</li>
+                            <li><strong>Presenze e report:</strong> registro presenze e riepiloghi</li>
+                            <li><strong>Notifiche:</strong> promemoria e avvisi direttamente sul dispositivo</li>
+                            <li><strong>Import ed export:</strong> dati facilmente esportabili e importabili</li>
+                            <li><strong>Sicurezza:</strong> accessi con ruoli differenziati e dati protetti</li>
+                        </ul>
+                    </div>
+                    <div class="project-contact-icons">
+                        <h4 style="font-size: 0.875rem; font-weight: 600; color: var(--text-secondary); margin-top: 0; margin-bottom: 0.75rem;">Contatto rapido</h4>
+                        <a href="#" onclick="contactProject('AGENDiN', 'email'); return false;" title="Contatta via Email">
+                            <i class="fas fa-envelope"></i>
+                        </a>
+                        <a href="#" onclick="contactProject('AGENDiN', 'telegram'); return false;" title="Contatta via Telegram">
+                            <i class="fab fa-telegram"></i>
+                        </a>
+                        <a href="#" onclick="contactProject('AGENDiN', 'signal'); return false;" title="Contatta via Signal">
+                            <i class="fab fa-signal-messenger"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="project-card glass-card featured">
+                    <div class="project-header">
+                        <h3>KPMS</h3>
+                        <span class="project-badge">In Evidenza</span>
+                    </div>
+                    <p class="project-description">
+                        Organizer personale all-in-one per gestire vita quotidiana e finanze in un unico posto.
+                    </p>
+                    <div class="project-features">
+                        <h4>Caratteristiche principali:</h4>
+                        <ul>
+                            <li><strong>Produttività:</strong> postit, promemoria, note, citazioni, eventi in calendario e attività con cronometro</li>
+                            <li><strong>Allenamento:</strong> schede settimanali per giorno, catalogo esercizi e log delle sessioni svolte</li>
+                            <li><strong>Vita quotidiana:</strong> tracker di opere e media, obiettivi e pasti</li>
+                            <li><strong>Finanze:</strong> conti, transazioni e investimenti</li>
+                        </ul>
+                    </div>
+                    <div class="project-contact-icons">
+                        <h4 style="font-size: 0.875rem; font-weight: 600; color: var(--text-secondary); margin-top: 0; margin-bottom: 0.75rem;">Contatto rapido</h4>
+                        <a href="#" onclick="contactProject('KPMS', 'email'); return false;" title="Contatta via Email">
+                            <i class="fas fa-envelope"></i>
+                        </a>
+                        <a href="#" onclick="contactProject('KPMS', 'telegram'); return false;" title="Contatta via Telegram">
+                            <i class="fab fa-telegram"></i>
+                        </a>
+                        <a href="#" onclick="contactProject('KPMS', 'signal'); return false;" title="Contatta via Signal">
+                            <i class="fab fa-signal-messenger"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="category-section tab-panel" id="telegram-bot" role="tabpanel" aria-labelledby="tab-telegram-bot" hidden>
+                <h2 class="category-title">Telegram Bot</h2>
+                <div class="project-card glass-card">
+                    <div class="project-header">
+                        <h3>Alfred-Report</h3>
+                    </div>
+                    <p class="project-description">
+                        Bot Telegram in <strong>Python</strong> che ogni mattina legge i canali finanza e crypto seguiti (tramite <strong>Telethon</strong>), li analizza con <strong>Claude Code</strong> e consegna un report in PDF alle 6:00.
+                    </p>
+                    <div class="project-features">
+                        <h4>Caratteristiche principali:</h4>
+                        <ul>
+                            <li><strong>Analisi critica:</strong> fact check con ricerca web, riflessioni e conseguenze per ogni notizia</li>
+                            <li><strong>Report periodici:</strong> giornaliero, settimanale, mensile e annuale, con continuità narrativa tra i report</li>
+                            <li><strong>On-demand:</strong> analisi dei messaggi inoltrati al bot con <code>/analizza_messaggi</code></li>
+                            <li><strong>Trasparenza:</strong> consumo di token e tempo di elaborazione riportati in ogni report</li>
+                        </ul>
+                    </div>
+                    <div class="project-contact-icons">
+                        <h4 style="font-size: 0.875rem; font-weight: 600; color: var(--text-secondary); margin-top: 0; margin-bottom: 0.75rem;">Contatto rapido</h4>
+                        <a href="#" onclick="contactProject('Alfred-Report', 'email'); return false;" title="Contatta via Email">
+                            <i class="fas fa-envelope"></i>
+                        </a>
+                        <a href="#" onclick="contactProject('Alfred-Report', 'telegram'); return false;" title="Contatta via Telegram">
+                            <i class="fab fa-telegram"></i>
+                        </a>
+                        <a href="#" onclick="contactProject('Alfred-Report', 'signal'); return false;" title="Contatta via Signal">
+                            <i class="fab fa-signal-messenger"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="project-card glass-card">
+                    <div class="project-header">
+                        <h3>VPS-BOT</h3>
+                    </div>
+                    <p class="project-description">
+                        Bot Telegram in <strong>Python</strong> per monitorare lo stato di una VPS: CPU, RAM, disco, uptime e processi attivi.
+                    </p>
+                    <div class="project-features">
+                        <h4>Caratteristiche principali:</h4>
+                        <ul>
+                            <li><strong>/status:</strong> snapshot immediato delle risorse e dei processi ordinati per consumo</li>
+                            <li><strong>Alert automatici:</strong> notifiche quando le metriche superano le soglie di warning o critiche</li>
+                            <li><strong>Nessuna porta esposta:</strong> funziona in long polling, senza webhook</li>
+                        </ul>
+                    </div>
+                    <div class="project-contact-icons">
+                        <h4 style="font-size: 0.875rem; font-weight: 600; color: var(--text-secondary); margin-top: 0; margin-bottom: 0.75rem;">Contatto rapido</h4>
+                        <a href="#" onclick="contactProject('VPS-BOT', 'email'); return false;" title="Contatta via Email">
+                            <i class="fas fa-envelope"></i>
+                        </a>
+                        <a href="#" onclick="contactProject('VPS-BOT', 'telegram'); return false;" title="Contatta via Telegram">
+                            <i class="fab fa-telegram"></i>
+                        </a>
+                        <a href="#" onclick="contactProject('VPS-BOT', 'signal'); return false;" title="Contatta via Signal">
+                            <i class="fab fa-signal-messenger"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="project-card glass-card">
+                    <div class="project-header">
+                        <h3>Crypto-Price-Bot</h3>
+                    </div>
+                    <p class="project-description">
+                        Bot Telegram personale in <strong>Python</strong> per monitorare il prezzo di qualsiasi criptovaluta tramite le API di <strong>CoinGecko</strong>.
+                    </p>
+                    <div class="project-features">
+                        <h4>Caratteristiche principali:</h4>
+                        <ul>
+                            <li><strong>Prezzi:</strong> snapshot in EUR e USD con <code>/prezzo</code></li>
+                            <li><strong>Alert personalizzati:</strong> soglie in salita o discesa, che notificano solo all'attraversamento</li>
+                            <li><strong>Notifiche a step:</strong> avviso automatico a ogni nuovo livello di prezzo, con stato salvato su SQLite</li>
+                            <li><strong>Quota API:</strong> controllo del consumo mensile con <code>/quota</code></li>
+                        </ul>
+                    </div>
+                    <div class="project-contact-icons">
+                        <h4 style="font-size: 0.875rem; font-weight: 600; color: var(--text-secondary); margin-top: 0; margin-bottom: 0.75rem;">Contatto rapido</h4>
+                        <a href="#" onclick="contactProject('Crypto-Price-Bot', 'email'); return false;" title="Contatta via Email">
+                            <i class="fas fa-envelope"></i>
+                        </a>
+                        <a href="#" onclick="contactProject('Crypto-Price-Bot', 'telegram'); return false;" title="Contatta via Telegram">
+                            <i class="fab fa-telegram"></i>
+                        </a>
+                        <a href="#" onclick="contactProject('Crypto-Price-Bot', 'signal'); return false;" title="Contatta via Signal">
+                            <i class="fab fa-signal-messenger"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="category-section tab-panel" id="desktop" role="tabpanel" aria-labelledby="tab-desktop" hidden>
+                <h2 class="category-title">Applicazioni Desktop</h2>
+                
+                <div class="project-card glass-card">
+                    <div class="project-header">
+                        <h3>Gestore Turni</h3>
                     </div>
                     <p class="project-description">
                         Applicazione desktop in <strong>Electron.js</strong> per la gestione automatica dei turni lavorativi. 
@@ -76,7 +244,7 @@
                 </div>
             </div>
 
-            <div class="category-section">
+            <div class="category-section tab-panel" id="pwa" role="tabpanel" aria-labelledby="tab-pwa" hidden>
                 <h2 class="category-title">Progressive Web Apps (PWA)</h2>
                 <div class="project-card glass-card">
                     <div class="project-header">
@@ -246,7 +414,7 @@
                 </div>
             </div>
 
-            <div class="category-section">
+            <div class="category-section tab-panel" id="strumenti-web" role="tabpanel" aria-labelledby="tab-strumenti-web" hidden>
                 <h2 class="category-title">Strumenti Web</h2>
                 
                 <div class="project-card glass-card">
@@ -311,7 +479,7 @@
                 </div>
             </div>
 
-            <div class="category-section">
+            <div class="category-section tab-panel" id="stage" role="tabpanel" aria-labelledby="tab-stage" hidden>
                 <h2 class="category-title">Progetti di Stage e Scolastici</h2>
                 
                 <div class="project-card glass-card">

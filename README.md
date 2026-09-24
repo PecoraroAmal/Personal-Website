@@ -12,7 +12,9 @@ Benvenuti nel repository del **portfolio personale** di Amal Pecoraro. Questo si
 Il portfolio è un **sito web** con design glassmorphism minimalista realizzato con HTML5, CSS3 e JavaScript, che include:
 
 * **Homepage** – Presentazione personale con focus su privacy, sicurezza e automazione processi
-* **Portfolio** – Showcase di 10+ progetti organizzati per categoria:
+* **Portfolio** – Showcase di 15+ progetti organizzati in tab per categoria:
+  * In Evidenza (AGENDiN, KPMS)
+  * Telegram Bot (Alfred-Report, VPS-BOT, Crypto-Price-Bot)
   * Applicazioni Desktop (Gestore Turni con Electron.js)
   * Progressive Web Apps (5 PWA: Beskytter, Salaus, Talous, Verk, Zakupy)
   * Strumenti Web (CleanTranscribe, Calcolatore Investimento)
